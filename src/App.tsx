@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Header from "./components/common/Header/Header";
+import { useDispatch } from "react-redux";
+import { getProducts } from "./redux/actions";
+import ProductDetails from "./components/ProductDetails/ProductDetails";
+import Category from "./components/Category/Category";
 
 function App() {
+  const dispatch: any = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product/details/:id" element={<ProductDetails />} />
+          <Route path="/categories/:category" element={<Category />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

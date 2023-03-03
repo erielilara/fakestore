@@ -1,0 +1,112 @@
+.card_container{
+   margin-top: 1rem;
+}
+
+.card{
+    height: 40vh;
+    width: 15vw;
+    margin: 1rem;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+.card-img {
+    cursor: pointer;
+    position: relative; 
+    box-sizing: border-box;
+    height: 25vh;
+    width: 100%; 
+    border-radius: 30px 30px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+}
+
+.title {
+    display: flex;
+   margin: 1rem;
+    justify-content: left;
+    color: #212121;
+    font-size: 1.5vw;
+    letter-spacing: -0.015rem;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    text-align: left;
+    color: #01161E; 
+}
+
+#text-1 {
+    color: #01161E;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: -webkit-box;
+    font-size: 1.5vw;
+    margin-left: 1rem;
+    font-weight: normal;
+    margin-bottom: 0.5rem; 
+}
+
+
+.text-3{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    color: #01161E;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: -webkit-box;
+    font-size: 0.9vw;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 0.5rem;
+    font-weight: normal;
+    text-align: left;
+}
+
+.card-link{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.left-Container{
+    background-color: #EFF6E0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.image-random {
+    height: 80%;
+    width: 50%;
+    object-fit: contain;
+    border-radius: 30px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    border: #01161E 8px solid;
+    transform: rotate(10deg);
+}
+
+.container-title{
+    margin-top: 8rem;
+    font-size: 8rem;
+    font-weight: bold;
+    line-height: 4rem;
+    color: #01161E;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container-subtitle{
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    font-size: 2.8rem;
+    font-weight: bold;
+    line-height: 3rem;
+    color: #01161E;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

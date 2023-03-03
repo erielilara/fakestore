@@ -1,0 +1,61 @@
+.detail-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+.detail-image{
+    position: relative; 
+    box-sizing: border-box;
+    height: 50vh;
+    width: 25vw;
+    object-fit: contain;
+}
+.detail-text{
+    margin-left: '30px'; 
+    display: 'flex'; 
+    align-items: 'center';
+}
+
+.detail-title {
+    margin-top: 3rem;
+    margin-left: 5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2.5rem;
+    color:  #01161E; 
+    font-weight: bold;
+    text-align: left;
+}
+
+.detail-category{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+    margin-left: 5rem;
+    color:  #01161E; 
+    font-weight: normal;
+    text-align: left;
+}
+.detail-price{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem;
+    margin-left: 5rem;
+    color:  #01161E; 
+    font-weight: bold;
+    text-align: left;
+}
+.detail-description{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1rem;
+    color:  #01161E; 
+    margin-left: 5rem;
+    font-weight: normal;
+    text-align: left;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+
+
