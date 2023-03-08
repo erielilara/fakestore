@@ -11,6 +11,11 @@ const WishList = () => {
   );
   return (
     <Container>
+      {uniqueWishList.length !== 0 ? (
+        <Col xs={12} sm={12} md={12} lg={12} className="mb-4">
+          <h1 className="wishlist-n">Your Wishlist</h1>
+        </Col>
+      ) : null}
       <Row>
         {uniqueWishList.length === 0 ? (
           <Col xs={12} sm={12} md={12} lg={12} className="mb-4">

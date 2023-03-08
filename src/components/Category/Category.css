@@ -76,3 +76,11 @@
      text-decoration: none;
      cursor: pointer;
  }
+
+ .category-title{
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: #01161E;
+        margin-top: 2rem;
+ }

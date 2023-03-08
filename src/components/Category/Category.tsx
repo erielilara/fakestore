@@ -26,6 +26,11 @@ const Category = () => {
   return (
     <Container>
       <Row>
+        <Col xs={12}>
+          <h1 className="category-title">{category}</h1>
+        </Col>
+      </Row>
+      <Row>
         {categories.map((product: any) => {
           return (
             <Col key={product.id} xs={12} sm={6} md={4} lg={3} className="mb-4">

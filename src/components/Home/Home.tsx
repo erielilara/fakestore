@@ -60,8 +60,8 @@ const Home = () => {
 
         {products.map((product: any) => {
           return (
-            <Col key={product.id} xs={12} sm={6} md={4} lg={3}>
-              <Card>
+            <Col key={product.id} xs={12} sm={6} md={4} lg={3} id="col-main">
+              <Card id="card-main">
                 <ButtonLike product={product} />
                 <Link to={`/product/details/${product.id}`} className="link">
                   <Card.Img
@@ -70,15 +70,9 @@ const Home = () => {
                     className="card-img"
                   />
                   <Card.Body>
-                    <Card.Title className="card-title">
-                      {product.title}
-                    </Card.Title>
-                    <Card.Text className="card-price">
-                      $ {product.price}
-                    </Card.Text>
-                    <Card.Text className="card-text">
-                      {product.description}
-                    </Card.Text>
+                    <Card.Title id="card-t">{product.title}</Card.Title>
+                    <Card.Text id="card-price">$ {product.price}</Card.Text>
+                    <Card.Text id="card-desc">{product.description}</Card.Text>
                   </Card.Body>
                 </Link>
               </Card>
