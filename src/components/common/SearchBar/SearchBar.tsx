@@ -7,13 +7,13 @@ export const SearchBar = (props: any) => {
   };
 
   return (
-    <div className="search-bar-container">
+    <InputGroup className="mb-3">
       <FormControl
+        placeholder="Search"
         className="search-bar"
-        placeholder="Search..."
+        aria-describedby="basic-addon2"
         onChange={handleChangeSearchBar}
-        value={props.search}
       />
-    </div>
+    </InputGroup>
   );
 };

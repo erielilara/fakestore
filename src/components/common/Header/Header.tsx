@@ -1,38 +1,56 @@
 import { Nav, Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import {
+  GiDiamondRing,
+  GiVibratingSmartphone,
+  GiClothes,
+  GiLargeDress,
+} from "react-icons/gi";
+import { AiOutlineHeart } from "react-icons/ai";
 
 const Header = (props: any) => {
-  const sendCategory = (e: any) => {
-    props.setSearch(e.target.value);
-  };
-  // enviar opcion de categoria al padre
-
   const categories = [
-    { name: "Jewelery", category: "jewelery" },
-    { name: "Electronics", category: "electronics" },
-    { name: `Men's clothing`, category: `men's clothing` },
-    { name: `Women's clothing`, category: `women's clothing` },
+    { name: "Jewelery", category: "jewelery", icon: <GiDiamondRing /> },
+    {
+      name: "Electronics",
+      category: "electronics",
+      icon: <GiVibratingSmartphone />,
+    },
+    { name: `Men's clothing`, category: `men's clothing`, icon: <GiClothes /> },
+    {
+      name: `Women's clothing`,
+      category: `women's clothing`,
+      icon: <GiLargeDress />,
+    },
   ];
 
   return (
-    <Navbar expand="lg" className="nav-bar">
+    <Navbar collapseOnSelect expand="lg" className="nav-bar">
       <Container>
-        <Navbar.Brand className="brand" href="/">
+        <Navbar.Brand as={Link} to="/" className="brand">
           Fake Store
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
-            {categories.map((product) => (
-              <Nav.Link href={`${product.category}`} className="card-link">
-                {product.name}
-              </Nav.Link>
-            ))}
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse className="navbar-collapse">
+          <Nav className="me-auto">
+            {categories.map((product: any) => {
+              return (
+                <Nav.Link
+                  as={Link}
+                  to={`/${product.category}`}
+                  key={product.category}
+                  className="categories"
+                >
+                  {product.icon} {product.name}
+                </Nav.Link>
+              );
+            })}
+          </Nav>
+          <Nav>
+            <Nav.Link className="categories" as={Link} to="/wishlist">
+              <AiOutlineHeart /> Wishlist
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -11,44 +11,49 @@ const Category = () => {
 
   const [categories, setCategories] = useState<any>([]);
 
-  const getCategory = async () => {
-    const response = await axios.get(
-      `https://fakestoreapi.com/products/category/${category}`
-    );
-    console.log("response", response.data);
-    setCategories(response.data);
-  };
-  getCategory();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getCategory = async () => {
+      const response = await axios.get(
+        `https://fakestoreapi.com/products/category/${category}`
+      );
+      setCategories(response.data);
+    };
+    getCategory();
+  }, [category]);
 
   return (
     <Container>
-      <Container className="card_container">
-        <h1 className="title_1">{category}</h1>
-        <Row xs={1} md={3} lg={4}>
-          {categories.map((product: any) => (
-            <Col key={product.id}>
-              <Card key={product.id} className="card">
+      <Row>
+        {categories.map((product: any) => {
+          return (
+            <Col key={product.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
+              <Card className="card">
                 <ButtonLike product={product} />
-                <Link
-                  to={`/product/details/${product.id}`}
-                  className="card-link"
-                >
+                <Link to={`/product/details/${product.id}`} className="link">
                   <Card.Img
-                    className="card-img"
+                    variant="top"
                     src={product.image}
-                    alt={product.name}
+                    className="card-img"
                   />
-                  <Card.Title className="title">{product.title}</Card.Title>
-                  <Card.Text id="text-1"> $ {product.price}</Card.Text>
-                  <Card.Text className="text-3">
-                    {product.description}
-                  </Card.Text>
+                  <Card.Body>
+                    <Card.Title className="card-title">
+                      {product.title}
+                    </Card.Title>
+                    <Card.Text className="card-price">
+                      $ {product.price}
+                    </Card.Text>
+                    <Card.Text className="card-text">
+                      {product.description}
+                    </Card.Text>
+                  </Card.Body>
                 </Link>
               </Card>
             </Col>
-          ))}
-        </Row>
-      </Container>
+          );
+        })}
+      </Row>
     </Container>
   );
 };

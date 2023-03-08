@@ -1,8 +1,12 @@
-import { GET_PRODUCTS, ADD_FAVORITE, REMOVE_FAVORITE } from "../actions";
+import {
+  GET_PRODUCTS,
+  ADD_PRODUCT_TO_WISHLIST,
+  REMOVE_PRODUCT_FROM_WISHLIST,
+} from "../actions";
 
 const inicialState: any = {
   products: [],
-  favorites: [],
+  wishList: [],
 };
 
 const reducer = (state = inicialState, action: any) => {
@@ -12,27 +16,19 @@ const reducer = (state = inicialState, action: any) => {
         ...state,
         products: action.payload,
       };
-    case ADD_FAVORITE:
+    case ADD_PRODUCT_TO_WISHLIST:
       return {
         ...state,
-        favorites: [...state.favorites, action.payload],
+        wishList: [...state.wishList, action.payload],
       };
-    case REMOVE_FAVORITE:
+    case REMOVE_PRODUCT_FROM_WISHLIST:
       // si ya existe el id en el array eliminar de favoritos
-      if (state.favorites.some((obj: any) => obj === action.payload.id)) {
-        console.log("entro al if", state.favorites);
-        return {
-          ...state,
-          favorites: state.favorites.filter(
-            (obj: any) => obj.id !== action.payload.id
-          ),
-        };
-      } else {
-        return {
-          ...state,
-          favorites: [...state.favorites, action.payload],
-        };
-      }
+      return {
+        ...state,
+        wishList: state.wishList.filter(
+          (product: any) => product.id !== action.payload
+        ),
+      };
     default:
       return state;
   }

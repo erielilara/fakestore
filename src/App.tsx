@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { getProducts } from "./redux/actions";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import Category from "./components/Category/Category";
+import WishList from "./components/WishList/WishList";
 
 function App() {
   const dispatch: any = useDispatch();
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/product/details/:id" element={<ProductDetails />} />
           <Route path="/:category" element={<Category />} />
+          <Route path="/wishlist" element={<WishList />} />
         </Routes>
       </Router>
     </div>

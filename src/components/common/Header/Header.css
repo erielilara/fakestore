@@ -1,12 +1,31 @@
 .nav-bar {
     align-items: center;
-    height: 10vh;
+    height: 8vh;
     background-color: #AEC3B0;
 }
 
 .brand {
-    font-size: 150px;
     font-weight: bold;
     color: #01161E;
     text-decoration: none;
+
 }
+
+.categories {
+    font-weight: bold;
+    color: #01161E;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.navbar-nav .nav-link {
+    color: #01161E;
+    font-weight: normal;
+    font-size: 18px;
+    text-decoration: none;
+    z-index: 999;
+    background-color: #AEC3B0;
+    text-align: center;
+}
+
+
